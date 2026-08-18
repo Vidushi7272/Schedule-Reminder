@@ -6,6 +6,10 @@ import jakarta.validation.constraints.Size;
 
 @Entity
 public class Subject {
+    public Long getId() {
+        return id;
+    }
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
