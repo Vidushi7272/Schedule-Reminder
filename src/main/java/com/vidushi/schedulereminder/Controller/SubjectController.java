@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class SubjectController {
 private final SubjectService service;
 SubjectController(SubjectService service){

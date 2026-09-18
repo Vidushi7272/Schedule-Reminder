@@ -1,6 +1,7 @@
 package com.vidushi.schedulereminder.Module;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
@@ -16,7 +17,7 @@ public class Reminder {
     private String description;
 
     private LocalDateTime createdAt;
-
+    @NotNull
     private LocalDateTime deadline;
 
     private LocalDateTime nextReminderTime;
@@ -28,7 +29,6 @@ public class Reminder {
 
     public Reminder() {
     }
-
     @PrePersist
     public void setInitialReminderTime() {
 
@@ -36,9 +36,25 @@ public class Reminder {
             createdAt = LocalDateTime.now();
         }
 
-        if (nextReminderTime == null) {
-            nextReminderTime = createdAt;
+        switch (repeatType) {
+
+            case HOURLY:
+                nextReminderTime = createdAt.plusHours(1);
+                break;
+
+            case DAILY:
+                nextReminderTime = createdAt.plusDays(1);
+                break;
+
+            case WEEKLY:
+                nextReminderTime = createdAt.plusWeeks(1);
+                break;
+
+            case ONCE:
+                nextReminderTime = deadline;
+                break;
         }
+
     }
 
     public Long getId() {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule Reminder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <p class="eyebrow">MY SCHEDULE</p>
+        <h1>Subjects</h1>
+        <p class="subtitle">Manage your current subjects.</p>
+      </div>
+      <button id="openAddBtn" class="primary">+ Add subject</button>
+    </header>
+
+    <section class="toolbar">
+      <input id="searchInput" type="search" placeholder="Search subjects...">
+      <button id="refreshBtn" class="secondary">Refresh</button>
+      <button id="deleteAllBtn" class="danger-outline">Delete all</button>
+    </section>
+
+    <section id="status" class="status" aria-live="polite"></section>
+    <section id="subjectsGrid" class="subjects-grid"></section>
+    <p id="emptyState" class="empty hidden">No subjects found.</p>
+  </main>
+
+  <dialog id="subjectDialog">
+    <form id="subjectForm" method="dialog">
+      <div class="dialog-header">
+        <h2 id="dialogTitle">Add subject</h2>
+        <button type="button" id="closeDialogBtn" class="icon-btn">×</button>
+      </div>
+
+      <input type="hidden" id="subjectId">
+      <label>
+        Subject name
+        <input id="titleInput" maxlength="20" required placeholder="e.g. Computer Networks">
+      </label>
+
+      <label>
+        Subject color
+        <input id="colorInput" type="color" value="#6c63ff">
+      </label>
+
+      <div class="dialog-actions">
+        <button type="button" id="cancelBtn" class="secondary">Cancel</button>
+        <button type="submit" class="primary">Save subject</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

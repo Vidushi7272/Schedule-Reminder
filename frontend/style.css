@@ -1,0 +1,44 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #202124;
+  background: #f6f7fb;
+}
+body { margin: 0; }
+.app { width: min(1100px, 92%); margin: 0 auto; padding: 42px 0 60px; }
+header { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
+.eyebrow { margin: 0 0 8px; color: #6c63ff; font-size: 12px; font-weight: 800; letter-spacing: 2px; }
+h1 { margin: 0; font-size: clamp(32px, 5vw, 54px); letter-spacing: -1.5px; }
+h2 { margin: 0; }
+.subtitle { color: #777b87; margin: 10px 0 0; }
+button, input { font: inherit; }
+button { cursor: pointer; border: 0; border-radius: 12px; padding: 12px 16px; font-weight: 700; }
+.primary { background: #6c63ff; color: white; }
+.secondary { background: #ececf5; color: #34344a; }
+.danger-outline { background: transparent; color: #d94b4b; border: 1px solid #efb5b5; }
+.toolbar { display: flex; gap: 12px; margin: 34px 0 20px; flex-wrap: wrap; }
+.toolbar input { flex: 1; min-width: 220px; }
+input { border: 1px solid #dedfea; background: white; border-radius: 12px; padding: 13px 14px; outline: none; }
+input:focus { border-color: #6c63ff; box-shadow: 0 0 0 3px #6c63ff20; }
+.status { min-height: 24px; color: #6b7080; margin-bottom: 18px; }
+.subjects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.subject-card { background: white; border-radius: 20px; padding: 22px; box-shadow: 0 8px 30px #2021240b; border-top: 7px solid var(--subject-color); min-height: 170px; display: flex; flex-direction: column; justify-content: space-between; }
+.subject-card h3 { margin: 0; font-size: 21px; overflow-wrap: anywhere; }
+.subject-id { color: #999dad; font-size: 12px; margin-top: 8px; }
+.card-actions { display: flex; gap: 8px; margin-top: 22px; }
+.card-actions button { padding: 9px 12px; font-size: 13px; }
+.empty { text-align: center; color: #858999; padding: 70px 0; }
+.hidden { display: none; }
+dialog { border: 0; border-radius: 22px; padding: 0; width: min(440px, 90%); box-shadow: 0 20px 80px #0003; }
+dialog::backdrop { background: #10102080; }
+form { padding: 26px; }
+.dialog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.icon-btn { padding: 4px 10px; font-size: 25px; background: transparent; color: #777; }
+label { display: block; font-weight: 700; margin-bottom: 18px; }
+label input { display: block; width: 100%; margin-top: 8px; }
+input[type="color"] { height: 48px; padding: 5px; }
+.dialog-actions { display: flex; justify-content: end; gap: 10px; margin-top: 25px; }
+@media (max-width: 600px) {
+  header { align-items: start; flex-direction: column; }
+  .primary { width: 100%; }
+}

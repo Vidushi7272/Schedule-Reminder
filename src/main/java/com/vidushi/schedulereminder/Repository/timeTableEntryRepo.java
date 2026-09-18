@@ -11,5 +11,4 @@ import java.util.List;
 @Repository
 public interface timeTableEntryRepo extends JpaRepository<timeTableEntry,Long> {
 public List<timeTableEntry> findByDayOrderByStartTime(DayOfWeek day);
-
 }
