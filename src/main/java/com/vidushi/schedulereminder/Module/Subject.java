@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
+
 @Entity
 public class Subject {
     public Long getId() {
@@ -34,6 +36,8 @@ public class Subject {
     public void setColor(String color) {
         this.color = color;
     }
+    @OneToMany(mappedBy = "subject")
 
+    private List<Reminder> reminders;
     private String color;
 }

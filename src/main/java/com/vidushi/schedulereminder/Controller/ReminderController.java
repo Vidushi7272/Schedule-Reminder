@@ -2,6 +2,7 @@ package com.vidushi.schedulereminder.Controller;
 
 import com.vidushi.schedulereminder.Module.Reminder;
 import com.vidushi.schedulereminder.Service.ReminderService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class ReminderController {
     }
 
     @PostMapping("/Reminder")
-    public Reminder addReminder(@RequestBody Reminder reminder) {
+    public Reminder addReminder(@Valid @RequestBody Reminder reminder) {
         return reminderService.addReminder(reminder);
     }
 
@@ -31,8 +32,7 @@ public class ReminderController {
     }
 
     @PutMapping("/Reminder/{id}")
-    public Reminder editReminder(
-            @RequestBody Reminder reminder,
+    public Reminder editReminder(@RequestBody Reminder reminder,
             @PathVariable Long id
     ) {
         return reminderService.editReminder(reminder, id);
