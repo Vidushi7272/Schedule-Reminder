@@ -130,7 +130,7 @@ public class ReminderService {
             existingReminder.setDeadline(reminder.getDeadline());
             existingReminder.setRepeatType(reminder.getRepeatType());
             existingReminder.setCompleted(reminder.isCompleted());
-
+            existingReminder.setSubject(reminder.getSubject());
             // If repeatType is not provided, default to ONCE
             if (existingReminder.getRepeatType() == null) {
                 existingReminder.setRepeatType(RepeatType.ONCE);

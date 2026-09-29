@@ -6,6 +6,10 @@ import java.time.DayOfWeek;
 import java.time.LocalTime;
 @Entity
 public class timeTableEntry {
+    public Long getId() {
+        return id;
+    }
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;

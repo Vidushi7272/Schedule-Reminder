@@ -54,4 +54,7 @@ public class EntryService {
         timeTableEntry e=repo.findById(id).orElseThrow(()-> new EntityNotFoundException("This Entry is invalid and does not exist!"));
         repo.deleteById(id);
     }
+    public void deleteAll() {
+        repo.deleteAll();
+    }
 }

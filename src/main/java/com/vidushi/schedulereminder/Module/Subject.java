@@ -1,5 +1,6 @@
 package com.vidushi.schedulereminder.Module;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -37,7 +38,7 @@ public class Subject {
         this.color = color;
     }
     @OneToMany(mappedBy = "subject")
-
+    @JsonIgnore
     private List<Reminder> reminders;
     private String color;
 }

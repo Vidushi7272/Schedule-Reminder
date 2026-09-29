@@ -30,6 +30,14 @@ public class Reminder {
     @Enumerated(EnumType.STRING)
     private RepeatType repeatType;
 
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
+
     @ManyToOne
     @JoinColumn(name="subject_id")
     private Subject subject;

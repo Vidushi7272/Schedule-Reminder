@@ -45,4 +45,8 @@ public class timeTableEntryController {
     public void delete(@PathVariable Long id) {
         service.delete(id);
     }
+    @DeleteMapping("/Entry/all")
+    public void deleteAll() {
+        service.deleteAll();
+    }
 }
